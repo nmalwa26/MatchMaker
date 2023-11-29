@@ -12,9 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="500dp"
-        android:text="Welcome MatchMaker!"
-        android:textSize="34sp"
+        android:layout_marginBottom="470dp"
+        android:fontFamily="cursive"
+        android:text="Welcome "
+        android:textSize="60sp"
         android:textStyle="bold" />
 
     <Button
@@ -24,7 +25,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
-        android:layout_marginBottom="240dp"
+        android:layout_marginBottom="300dp"
         android:text="Easy" />
 
     <Button
@@ -33,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="240dp"
+        android:layout_marginBottom="300dp"
         android:layout_toEndOf="@+id/Easy_button"
         android:text="Medium" />
 
@@ -43,10 +44,21 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="240dp"
+        android:layout_marginBottom="300dp"
         android:layout_toEndOf="@+id/Medium_button"
         android:text="Hard" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="400dp"
+        android:fontFamily="cursive"
+        android:text="Match Maker!"
+        android:textSize="60sp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>
