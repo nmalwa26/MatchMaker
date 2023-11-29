@@ -6,6 +6,9 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R.drawable.*
+import com.example.myapplication.R.drawable.baseline_headset_24
+import com.example.myapplication.R.drawable.baseline_icecream_24
+import com.example.myapplication.R.drawable.baseline_fastfood_24
 import com.example.myapplication.R.drawable.baseline_bedtime_24
 import com.example.myapplication.R.drawable.baseline_castle_24
 import com.example.myapplication.R.drawable.baseline_cloud_24
