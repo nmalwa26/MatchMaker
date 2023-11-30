@@ -16,6 +16,7 @@
         android:layout_marginStart="23dp"
         android:layout_marginTop="24dp"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -27,6 +28,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton11"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -38,6 +40,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton14"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -49,6 +52,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton21"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -60,6 +64,7 @@
         android:layout_marginStart="23dp"
         android:layout_marginTop="24dp"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -71,6 +76,7 @@
         android:layout_marginStart="23dp"
         android:layout_marginTop="24dp"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -82,6 +88,7 @@
         android:layout_marginStart="23dp"
         android:layout_marginTop="24dp"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -93,6 +100,7 @@
         android:layout_marginStart="23dp"
         android:layout_marginTop="24dp"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -104,6 +112,7 @@
         android:layout_marginStart="23dp"
         android:layout_marginTop="24dp"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -115,6 +124,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton25"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -126,6 +136,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton26"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -137,6 +148,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton27"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -148,6 +160,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton28"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -159,6 +172,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton29"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -170,6 +184,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton30"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -181,6 +196,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton31"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -192,6 +208,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton32"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -203,6 +220,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton33"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -214,6 +232,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton34"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -225,6 +244,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton35"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -236,6 +256,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton36"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -247,6 +268,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton37"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -258,6 +280,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton38"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 
     <ImageButton
@@ -269,5 +292,6 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/imageButton39"
         android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
 </RelativeLayout>
