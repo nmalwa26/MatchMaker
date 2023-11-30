@@ -21,5 +21,11 @@ class MainActivity : AppCompatActivity() {
             val Intent = Intent(this,MediumMode::class.java)
             startActivity(Intent)
         }
+
+        val hardMode = findViewById<Button>(R.id.Hard_button)
+        hardMode.setOnClickListener{
+            val Intent = Intent(this,HardMode::class.java)
+            startActivity(Intent)
+        }
     }
 }
