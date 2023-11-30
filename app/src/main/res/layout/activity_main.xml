@@ -60,5 +60,11 @@
         android:textSize="60sp"
         android:textStyle="bold" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="159dp"
+        android:layout_height="217dp"
+        app:srcCompat="@drawable/cupid1" />
+
 
 </RelativeLayout>

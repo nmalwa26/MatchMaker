@@ -5,7 +5,6 @@ import android.util.Log
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.R.drawable.*
 import com.example.myapplication.R.drawable.baseline_bedtime_24
 import com.example.myapplication.R.drawable.baseline_castle_24
 import com.example.myapplication.R.drawable.baseline_cloud_24
