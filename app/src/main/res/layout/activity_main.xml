@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"   added this-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,6 +17,12 @@
         android:text="Welcome MatchMaker!"
         android:textSize="34sp"
         android:textStyle="bold" />
+
+<!--    <FrameLayout-->
+<!--        android:id=@+id/framelayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"></FrameLayout>-->
+
 
     <Button
         android:id="@+id/Easy_button"
