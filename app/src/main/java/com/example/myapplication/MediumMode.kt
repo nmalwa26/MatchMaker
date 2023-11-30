@@ -79,7 +79,7 @@ class MediumMode : AppCompatActivity() {
 
             // Callback function, fired on regular interval
             override fun onTick(millisUntilFinished: Long) {
-                timeText2.setText("seconds remaining: " + millisUntilFinished / 1000)
+                timeText2.setText("Time: " + millisUntilFinished / 1000)
             }
 
             // Callback function, fired

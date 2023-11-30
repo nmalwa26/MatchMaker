@@ -72,15 +72,14 @@ class EasyMode : AppCompatActivity() {
 
             // Callback function, fired on regular interval
             override fun onTick(millisUntilFinished: Long) {
-                timeText.setText("seconds remaining: " + millisUntilFinished / 1000)
+                timeText.setText("Time: " + millisUntilFinished / 1000)
             }
 
             // Callback function, fired
             // when the time is up
             override fun onFinish() {
                 timeText.setText("done!")
-
-
+                //display message
             }
         }.start()
     }

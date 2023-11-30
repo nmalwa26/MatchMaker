@@ -110,7 +110,7 @@ class HardMode : AppCompatActivity() {
 
             // Callback function, fired on regular interval
             override fun onTick(millisUntilFinished: Long) {
-                timeText3.setText("seconds remaining: " + millisUntilFinished / 1000)
+                timeText3.setText("Time: " + millisUntilFinished / 1000)
             }
 
             // Callback function, fired
