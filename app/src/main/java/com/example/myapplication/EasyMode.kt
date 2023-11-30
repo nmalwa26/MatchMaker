@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
@@ -17,12 +18,18 @@ private lateinit var cards: List<MemoryCard>
 private var indexOfSingleSelectedCard: Int? = null
 class EasyMode : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_easy_mode)
+        var timeText = findViewById<TextView>(R.id.TimerText)
 
-
-        val images = mutableListOf(baseline_bedtime_24, baseline_cloud_24, baseline_favorite_24, baseline_star_24)
+        val images = mutableListOf(
+            baseline_bedtime_24,
+            baseline_cloud_24,
+            baseline_favorite_24,
+            baseline_star_24
+        )
         images.addAll(images)
         images.shuffle()
 
@@ -35,13 +42,21 @@ class EasyMode : AppCompatActivity() {
         val imageButton7 = findViewById<ImageButton>(R.id.imageButton7)
         val imageButton8 = findViewById<ImageButton>(R.id.imageButton8)
 
-        buttons = listOf(imageButton,imageButton2,imageButton3, imageButton4, imageButton5, imageButton6, imageButton7, imageButton8)
+        buttons = listOf(
+            imageButton,
+            imageButton2,
+            imageButton3,
+            imageButton4,
+            imageButton5,
+            imageButton6,
+            imageButton7,
+            imageButton8
+        )
 
-        cards = buttons.indices.map{ index ->
+        cards = buttons.indices.map { index ->
             MemoryCard(images[index])
         }
-
-        buttons.forEachIndexed{ index, button->
+        buttons.forEachIndexed { index, button ->
             button.setOnClickListener {
                 Log.i(TAG, "button clicked!")
                 //Update models
@@ -49,15 +64,7 @@ class EasyMode : AppCompatActivity() {
                 //Update the UI of game
                 updateViews()
             }
-
         }
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_easy_mode)
-        var textView = findViewById(R.id.TimerText)
 
         // time count down for 30 seconds,
         // with 1 second as countDown interval
@@ -65,20 +72,21 @@ class EasyMode : AppCompatActivity() {
 
             // Callback function, fired on regular interval
             override fun onTick(millisUntilFinished: Long) {
-                textView.setText("seconds remaining: " + millisUntilFinished / 1000)
+                timeText.setText("seconds remaining: " + millisUntilFinished / 1000)
             }
 
             // Callback function, fired
             // when the time is up
             override fun onFinish() {
-                textView.setText("done!")
+                timeText.setText("done!")
+
+
             }
         }.start()
     }
 
-
     private fun updateViews() {
-        cards.forEachIndexed{ index, card ->
+        cards.forEachIndexed { index, card ->
             val button = buttons[index]
             if (card.isMatched) {
                 button.alpha = 0.1f
@@ -90,34 +98,43 @@ class EasyMode : AppCompatActivity() {
     private fun updateModels(position: Int) {
         val card = cards[position]
         //Error Checking
-        if(card.isFaceUp){
-            Toast.makeText(this,"Invalid move",Toast.LENGTH_SHORT).show()
+        if (card.isFaceUp) {
+            Toast.makeText(this, "Invalid move", Toast.LENGTH_SHORT).show()
             return
         }
         //Three cases
-        if (indexOfSingleSelectedCard == null){
+        if (indexOfSingleSelectedCard == null) {
             restoreCards()
             indexOfSingleSelectedCard = position
         } else {
-          checkForMatch(indexOfSingleSelectedCard!!, position)
-          indexOfSingleSelectedCard = null
+            checkForMatch(indexOfSingleSelectedCard!!, position)
+            indexOfSingleSelectedCard = null
         }
         card.isFaceUp = !card.isFaceUp
     }
 
     private fun restoreCards() {
-        for (card in cards){
-            if (!card.isMatched){
+        for (card in cards) {
+            if (!card.isMatched) {
                 card.isFaceUp = false
             }
         }
     }
 
     private fun checkForMatch(position1: Int, position2: Int) {
-   if (cards[position1].identifier == cards[position2].identifier){
-       Toast.makeText(this, "You made a match!", Toast.LENGTH_SHORT).show()
-       cards[position1].isMatched = true
-       cards[position2].isMatched = true
-   }
+        var counter = 4
+        if (cards[position1].identifier == cards[position2].identifier) {
+            Toast.makeText(this, "You made a match!", Toast.LENGTH_SHORT).show()
+            counter++
+            cards[position1].isMatched = true
+            cards[position2].isMatched = true
+        }
+
+        if(counter.equals(4)){
+            //display pop up message saying they won!
+        }
     }
 }
+
+
+

@@ -1,8 +1,10 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R.drawable.baseline_bedtime_24
@@ -27,6 +29,7 @@ class HardMode : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hard_mode)
+        var timeText3 = findViewById<TextView>(R.id.TimerText3)
 
         val images = mutableListOf( baseline_bedtime_24, baseline_cloud_24, baseline_favorite_24, baseline_star_24,
             baseline_electric_car_24, baseline_castle_24, baseline_fastfood_24, baseline_headset_24,
@@ -100,6 +103,23 @@ class HardMode : AppCompatActivity() {
             }
 
         }
+
+        // time count down for 30 seconds,
+        // with 1 second as countDown interval
+        object : CountDownTimer(60000, 1000) {
+
+            // Callback function, fired on regular interval
+            override fun onTick(millisUntilFinished: Long) {
+                timeText3.setText("seconds remaining: " + millisUntilFinished / 1000)
+            }
+
+            // Callback function, fired
+            // when the time is up
+            override fun onFinish() {
+                timeText3.setText("done!")
+
+            }
+        }.start()
     }
 
     private fun updateViews() {

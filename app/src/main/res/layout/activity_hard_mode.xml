@@ -294,4 +294,26 @@
         android:scaleType="centerCrop"
         android:importantForAccessibility="no"
         app:srcCompat="@drawable/baseline_square_24" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@color/grey"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <TextView
+        android:id="@+id/TimerText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="cursive"
+        android:text="00 : 00"
+        android:textSize="32dp"
+        android:textStyle="bold" />
 </RelativeLayout>
