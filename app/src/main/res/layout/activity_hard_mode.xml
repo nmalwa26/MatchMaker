@@ -317,4 +317,14 @@
         android:text="00 : 00"
         android:textSize="32dp"
         android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/homeButton3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/baseline_house_24" />
 </RelativeLayout>
+

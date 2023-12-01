@@ -1,8 +1,13 @@
 package com.example.myapplication
 
+
+import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.view.Window
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
@@ -22,7 +27,14 @@ class EasyMode : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_easy_mode)
+
         var timeText = findViewById<TextView>(R.id.TimerText)
+
+        val homeButton = findViewById<ImageButton>(R.id.homeButton1)
+        homeButton.setOnClickListener{
+            val Intent = Intent(this,MainActivity::class.java)
+            startActivity(Intent)
+        }
 
         val images = mutableListOf(
             baseline_bedtime_24,
@@ -80,6 +92,15 @@ class EasyMode : AppCompatActivity() {
             override fun onFinish() {
                 timeText.setText("done!")
                 //display message
+                setContentView(R.layout.loser_page)
+                val btn = findViewById<Button>(R.id.hp)
+                val dialog = Dialog(this@EasyMode)
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+                dialog.setCancelable(false)
+                btn.setOnClickListener {
+                    val Intent1 = Intent(this@EasyMode,MainActivity::class.java)
+                    startActivity(Intent1)
+                }
             }
         }.start()
     }

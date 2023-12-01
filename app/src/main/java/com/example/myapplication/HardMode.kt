@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
@@ -30,6 +31,12 @@ class HardMode : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hard_mode)
         var timeText3 = findViewById<TextView>(R.id.TimerText3)
+
+        val homeButton = findViewById<ImageButton>(R.id.homeButton3)
+        homeButton.setOnClickListener{
+            val Intent = Intent(this,MainActivity::class.java)
+            startActivity(Intent)
+        }
 
         val images = mutableListOf( baseline_bedtime_24, baseline_cloud_24, baseline_favorite_24, baseline_star_24,
             baseline_electric_car_24, baseline_castle_24, baseline_fastfood_24, baseline_headset_24,

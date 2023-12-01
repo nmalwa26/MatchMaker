@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="470dp"
+        android:layout_marginBottom="420dp"
         android:fontFamily="cursive"
         android:text="Welcome "
         android:textSize="60sp"
@@ -25,7 +25,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
-        android:layout_marginBottom="300dp"
+        android:layout_marginBottom="250dp"
         android:text="Easy" />
 
     <Button
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="300dp"
+        android:layout_marginBottom="250dp"
         android:layout_toEndOf="@+id/Easy_button"
         android:text="Medium" />
 
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="300dp"
+        android:layout_marginBottom="250dp"
         android:layout_toEndOf="@+id/Medium_button"
         android:text="Hard" />
 
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="400dp"
+        android:layout_marginBottom="350dp"
         android:fontFamily="cursive"
         android:text="Match Maker!"
         android:textSize="60sp"
@@ -65,6 +65,14 @@
         android:layout_width="159dp"
         android:layout_height="217dp"
         app:srcCompat="@drawable/cupid1" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        app:srcCompat="@drawable/heartstring" />
 
 
 </RelativeLayout>
