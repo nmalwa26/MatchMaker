@@ -48,5 +48,15 @@
         android:text="Hard" />
 
 
+    <ImageButton
+        android:id="@+id/play_btn"
+        android:contentDescription="Play Button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/baseline_play_arrow_24" />
+
+
+
 
 </RelativeLayout>
