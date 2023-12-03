@@ -25,7 +25,7 @@ class EasyMode : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_easy_mode)
-        
+
 
         var timeText = findViewById<TextView>(R.id.TimerText)
 

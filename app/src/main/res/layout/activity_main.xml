@@ -75,6 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
+        android:importantForAccessibility="no"
         app:srcCompat="@drawable/heartstring" />
 
     <ImageButton
@@ -96,7 +97,9 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="10dp"
-        app:srcCompat="@drawable/baseline_pause_24" />
+        android:onClick="play"
+        app:srcCompat="@drawable/baseline_pause_24"
+        tools:ignore="OnClick" />
 
 
 </RelativeLayout>
