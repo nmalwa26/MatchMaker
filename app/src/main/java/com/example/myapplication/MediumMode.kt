@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
@@ -24,6 +25,7 @@ class MediumMode : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_medium_mode)
+
         var timeText2 = findViewById<TextView>(R.id.TimerText2)
 
         val homeButton = findViewById<ImageButton>(R.id.homeButton2)
@@ -92,7 +94,13 @@ class MediumMode : AppCompatActivity() {
             // Callback function, fired
             // when the time is up
             override fun onFinish() {
-                timeText2.setText("done!")
+                //go to lose page
+                setContentView(R.layout.loser_page)
+                val btn = findViewById<Button>(R.id.hp)
+                btn.setOnClickListener {
+                    val Intent1 = Intent(this@MediumMode,MainActivity::class.java)
+                    startActivity(Intent1)
+                }
 
             }
         }.start()
@@ -134,11 +142,27 @@ class MediumMode : AppCompatActivity() {
         }
     }
 
+    //initializes counter variable
+    private var counter = 0
+
     private fun checkForMatch(position1: Int, position2: Int) {
         if (cards[position1].identifier == cards[position2].identifier) {
             Toast.makeText(this, "You made a match!", Toast.LENGTH_SHORT).show()
+            counter++
             cards[position1].isMatched = true
             cards[position2].isMatched = true
+        }
+
+        //checks if all matches are made
+        //opens winner page if completed in time
+        if(counter.equals(6)){
+            //display pop up message saying they won!
+            setContentView(R.layout.winner_page)
+            val btn = findViewById<Button>(R.id.hp)
+            btn.setOnClickListener {
+                val Intent1 = Intent(this@MediumMode,MainActivity::class.java)
+                startActivity(Intent1)
+            }
         }
     }
 }

@@ -11,7 +11,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="530dp"
-        android:text="Sorry"
+        android:text="Congrats"
         android:fontFamily="cursive"
         android:textSize="60sp"
         android:textStyle="bold" />
@@ -35,7 +35,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="380dp"
-        android:text="you lost, try again next time!!"
+        android:text="you won the game!!"
         android:fontFamily="cursive"
         android:textSize="24sp"
         android:textStyle="bold" />

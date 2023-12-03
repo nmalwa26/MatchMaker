@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
@@ -30,6 +31,8 @@ class HardMode : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hard_mode)
+
+
         var timeText3 = findViewById<TextView>(R.id.TimerText3)
 
         val homeButton = findViewById<ImageButton>(R.id.homeButton3)
@@ -113,7 +116,7 @@ class HardMode : AppCompatActivity() {
 
         // time count down for 30 seconds,
         // with 1 second as countDown interval
-        object : CountDownTimer(60000, 1000) {
+        object : CountDownTimer(90000, 1000) {
 
             // Callback function, fired on regular interval
             override fun onTick(millisUntilFinished: Long) {
@@ -124,6 +127,13 @@ class HardMode : AppCompatActivity() {
             // when the time is up
             override fun onFinish() {
                 timeText3.setText("done!")
+                //go to lose page
+                setContentView(R.layout.loser_page)
+                val btn = findViewById<Button>(R.id.hp)
+                btn.setOnClickListener {
+                    val Intent1 = Intent(this@HardMode,MainActivity::class.java)
+                    startActivity(Intent1)
+                }
 
             }
         }.start()
@@ -165,11 +175,27 @@ class HardMode : AppCompatActivity() {
         }
     }
 
+    //initializes counter variable
+    private var counter = 0
+
     private fun checkForMatch(position1: Int, position2: Int) {
         if (cards[position1].identifier == cards[position2].identifier) {
             Toast.makeText(this, "You made a match!", Toast.LENGTH_SHORT).show()
+            counter++
             cards[position1].isMatched = true
             cards[position2].isMatched = true
+        }
+
+        //checks if all matches are made
+        //opens winner page if completed in time
+        if(counter.equals(12)){
+            //display pop up message saying they won!
+            setContentView(R.layout.winner_page)
+            val btn = findViewById<Button>(R.id.hp)
+            btn.setOnClickListener {
+                val Intent1 = Intent(this@HardMode,MainActivity::class.java)
+                startActivity(Intent1)
+            }
         }
     }
 }
