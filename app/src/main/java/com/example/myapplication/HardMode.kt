@@ -125,7 +125,7 @@ class HardMode : AppCompatActivity() {
 
         // time count down for 30 seconds,
         // with 1 second as countDown interval
-        object : CountDownTimer(90000, 1000) {
+        object : CountDownTimer(60000, 1000) {
 
             // Callback function, fired on regular interval
             override fun onTick(millisUntilFinished: Long) {

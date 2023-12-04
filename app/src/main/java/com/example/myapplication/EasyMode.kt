@@ -169,8 +169,12 @@ class EasyMode : AppCompatActivity() {
         //opens winner page if completed in time
         if(counter.equals(4)){
             setContentView(R.layout.winner_page)
-            val Intent1 = Intent(this@EasyMode,winnerPage::class.java)
-            startActivity(Intent1)
+            //button that leads back to home page
+            val btn = findViewById<Button>(R.id.hp)
+            btn.setOnClickListener {
+                val Intent1 = Intent(this@EasyMode,MainActivity::class.java)
+                startActivity(Intent1)
+            }
         }
     }
 }
