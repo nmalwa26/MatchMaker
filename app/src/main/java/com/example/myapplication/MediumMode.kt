@@ -20,25 +20,37 @@ private const val TAG="MediumMode"
 private lateinit var buttons: List<ImageButton>
 private lateinit var cards: List<MemoryCard>
 private var indexOfSingleSelectedCard: Int? = null
+
 class MediumMode : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_medium_mode)
 
+        //initializes text for timer
         var timeText2 = findViewById<TextView>(R.id.TimerText2)
 
+        //creates a home button that leads to home page
         val homeButton = findViewById<ImageButton>(R.id.homeButton2)
         homeButton.setOnClickListener{
             val Intent = Intent(this,MainActivity::class.java)
             startActivity(Intent)
         }
 
-        val images = mutableListOf( baseline_bedtime_24, baseline_cloud_24, baseline_favorite_24, baseline_star_24,
-            baseline_electric_car_24, baseline_castle_24)
+        //initialize match icons
+        val images = mutableListOf(
+            baseline_bedtime_24,
+            baseline_cloud_24,
+            baseline_favorite_24,
+            baseline_star_24,
+            baseline_electric_car_24,
+            baseline_castle_24)
+        //duplicates images so match can be made
         images.addAll(images)
+        //order of images will change each time app runs
         images.shuffle()
 
+        //initialize buttons(front side of card)
         val imageButton9 = findViewById<ImageButton>(R.id.imageButton9)
         val imageButton10 = findViewById<ImageButton>(R.id.imageButton10)
         val imageButton12 = findViewById<ImageButton>(R.id.imageButton12)
@@ -52,6 +64,7 @@ class MediumMode : AppCompatActivity() {
         val imageButton22 = findViewById<ImageButton>(R.id.imageButton22)
         val imageButton23 = findViewById<ImageButton>(R.id.imageButton23)
 
+        //sort buttons together into a list
         buttons = listOf(
             imageButton9,
             imageButton10,
@@ -67,16 +80,18 @@ class MediumMode : AppCompatActivity() {
             imageButton23
         )
 
+        //operates on given list of buttons
         cards = buttons.indices.map { index ->
             MemoryCard(images[index])
         }
 
+        //attach click listener to each button
         buttons.forEachIndexed { index, button ->
             button.setOnClickListener {
                 Log.i(TAG, "button clicked!")
-                //Update models
+                //Updates game based on what cards selected
                 updateModels(index)
-                //Update the UI of game
+                //Updates the view of the cards
                 updateViews()
             }
 
@@ -86,16 +101,16 @@ class MediumMode : AppCompatActivity() {
         // with 1 second as countDown interval
         object : CountDownTimer(30000, 1000) {
 
-            // Callback function, fired on regular interval
+            // Displays time counting down
             override fun onTick(millisUntilFinished: Long) {
                 timeText2.setText("Time: " + millisUntilFinished / 1000)
             }
 
-            // Callback function, fired
-            // when the time is up
+            //when time finishes
             override fun onFinish() {
                 //go to lose page
                 setContentView(R.layout.loser_page)
+                //button that leads back to the home page
                 val btn = findViewById<Button>(R.id.hp)
                 btn.setOnClickListener {
                     val Intent1 = Intent(this@MediumMode,MainActivity::class.java)
@@ -107,11 +122,13 @@ class MediumMode : AppCompatActivity() {
     }
 
     private fun updateViews() {
+        //iterates through every button
         cards.forEachIndexed { index, card ->
             val button = buttons[index]
             if (card.isMatched) {
                 button.alpha = 0.1f
             }
+            //fades matched cards
             button.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.baseline_square_24)
         }
     }
@@ -123,17 +140,20 @@ class MediumMode : AppCompatActivity() {
             Toast.makeText(this, "Invalid move", Toast.LENGTH_SHORT).show()
             return
         }
-        //Three cases
+        //If 0 or 2 cards flipped over before next card clicked
         if (indexOfSingleSelectedCard == null) {
             restoreCards()
             indexOfSingleSelectedCard = position
-        } else {
+        }
+        //If 1 card is flipped over before next card clicked
+        else {
             checkForMatch(indexOfSingleSelectedCard!!, position)
             indexOfSingleSelectedCard = null
         }
         card.isFaceUp = !card.isFaceUp
     }
 
+    //flips cards back if turned over
     private fun restoreCards() {
         for (card in cards) {
             if (!card.isMatched) {
@@ -145,8 +165,10 @@ class MediumMode : AppCompatActivity() {
     //initializes counter variable
     private var counter = 0
 
+    //checks for a match
     private fun checkForMatch(position1: Int, position2: Int) {
         if (cards[position1].identifier == cards[position2].identifier) {
+            //message displaying that a match was made
             Toast.makeText(this, "You made a match!", Toast.LENGTH_SHORT).show()
             counter++
             cards[position1].isMatched = true
@@ -156,8 +178,8 @@ class MediumMode : AppCompatActivity() {
         //checks if all matches are made
         //opens winner page if completed in time
         if(counter.equals(6)){
-            //display pop up message saying they won!
             setContentView(R.layout.winner_page)
+            //button that leads back to home page
             val btn = findViewById<Button>(R.id.hp)
             btn.setOnClickListener {
                 val Intent1 = Intent(this@MediumMode,MainActivity::class.java)
