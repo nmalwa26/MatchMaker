@@ -12,10 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //adds background music to the app
+        //initializes Media Player
         var mMediaPlayer: MediaPlayer? = null
 
-        //creates button that can start back the music
+        //creates button that can start the music
         val soundplayButton = findViewById<ImageButton>(R.id.soundPlay)
         soundplayButton.setOnClickListener{
             if (mMediaPlayer == null) {
@@ -36,18 +36,21 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        //creates button that leads to easy level
         val easyMode = findViewById<Button>(R.id.Easy_button)
         easyMode.setOnClickListener{
             val Intent = Intent(this,EasyMode::class.java)
             startActivity(Intent)
         }
 
+        //creates button that leads to medium level
         val mediumMode = findViewById<Button>(R.id.Medium_button)
         mediumMode.setOnClickListener{
             val Intent = Intent(this,MediumMode::class.java)
             startActivity(Intent)
         }
 
+        //creates button that leads to hard level
         val hardMode = findViewById<Button>(R.id.Hard_button)
         hardMode.setOnClickListener{
             val Intent = Intent(this,HardMode::class.java)
