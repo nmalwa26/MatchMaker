@@ -1,6 +1,5 @@
 package com.example.myapplication
 
-
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -11,62 +10,67 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R.drawable.baseline_bedtime_24
+import com.example.myapplication.R.drawable.baseline_castle_24
 import com.example.myapplication.R.drawable.baseline_cloud_24
+import com.example.myapplication.R.drawable.baseline_electric_car_24
 import com.example.myapplication.R.drawable.baseline_favorite_24
 import com.example.myapplication.R.drawable.baseline_star_24
 
-private const val TAG="EasyMode"
+private const val TAG="MediumMode"
 private lateinit var buttons: List<ImageButton>
 private lateinit var cards: List<MemoryCard>
 private var indexOfSingleSelectedCard: Int? = null
-class EasyMode : AppCompatActivity() {
-
+class MediumMode : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_easy_mode)
+        setContentView(R.layout.activity_medium_mode)
 
+        var timeText2 = findViewById<TextView>(R.id.TimerText2)
 
-        var timeText = findViewById<TextView>(R.id.TimerText)
-
-        val homeButton = findViewById<ImageButton>(R.id.homeButton1)
+        val homeButton = findViewById<ImageButton>(R.id.homeButton2)
         homeButton.setOnClickListener{
             val Intent = Intent(this,MainActivity::class.java)
             startActivity(Intent)
         }
 
-        val images = mutableListOf(
-            baseline_bedtime_24,
-            baseline_cloud_24,
-            baseline_favorite_24,
-            baseline_star_24
-        )
+        val images = mutableListOf( baseline_bedtime_24, baseline_cloud_24, baseline_favorite_24, baseline_star_24,
+            baseline_electric_car_24, baseline_castle_24)
         images.addAll(images)
         images.shuffle()
 
-        val imageButton = findViewById<ImageButton>(R.id.imageButton)
-        val imageButton2 = findViewById<ImageButton>(R.id.imageButton2)
-        val imageButton3 = findViewById<ImageButton>(R.id.imageButton3)
-        val imageButton4 = findViewById<ImageButton>(R.id.imageButton4)
-        val imageButton5 = findViewById<ImageButton>(R.id.imageButton5)
-        val imageButton6 = findViewById<ImageButton>(R.id.imageButton6)
-        val imageButton7 = findViewById<ImageButton>(R.id.imageButton7)
-        val imageButton8 = findViewById<ImageButton>(R.id.imageButton8)
+        val imageButton9 = findViewById<ImageButton>(R.id.imageButton9)
+        val imageButton10 = findViewById<ImageButton>(R.id.imageButton10)
+        val imageButton12 = findViewById<ImageButton>(R.id.imageButton12)
+        val imageButton13 = findViewById<ImageButton>(R.id.imageButton13)
+        val imageButton14 = findViewById<ImageButton>(R.id.imageButton16)
+        val imageButton15 = findViewById<ImageButton>(R.id.imageButton15)
+        val imageButton17 = findViewById<ImageButton>(R.id.imageButton17)
+        val imageButton18 = findViewById<ImageButton>(R.id.imageButton18)
+        val imageButton19 = findViewById<ImageButton>(R.id.imageButton19)
+        val imageButton20 = findViewById<ImageButton>(R.id.imageButton20)
+        val imageButton22 = findViewById<ImageButton>(R.id.imageButton22)
+        val imageButton23 = findViewById<ImageButton>(R.id.imageButton23)
 
         buttons = listOf(
-            imageButton,
-            imageButton2,
-            imageButton3,
-            imageButton4,
-            imageButton5,
-            imageButton6,
-            imageButton7,
-            imageButton8
+            imageButton9,
+            imageButton10,
+            imageButton12,
+            imageButton13,
+            imageButton14,
+            imageButton15,
+            imageButton17,
+            imageButton18,
+            imageButton19,
+            imageButton20,
+            imageButton22,
+            imageButton23
         )
 
         cards = buttons.indices.map { index ->
             MemoryCard(images[index])
         }
+
         buttons.forEachIndexed { index, button ->
             button.setOnClickListener {
                 Log.i(TAG, "button clicked!")
@@ -75,6 +79,7 @@ class EasyMode : AppCompatActivity() {
                 //Update the UI of game
                 updateViews()
             }
+
         }
 
         // time count down for 30 seconds,
@@ -83,7 +88,7 @@ class EasyMode : AppCompatActivity() {
 
             // Callback function, fired on regular interval
             override fun onTick(millisUntilFinished: Long) {
-                timeText.setText("Time: " + millisUntilFinished / 1000)
+                timeText2.setText("Time: " + millisUntilFinished / 1000)
             }
 
             // Callback function, fired
@@ -93,9 +98,10 @@ class EasyMode : AppCompatActivity() {
                 setContentView(R.layout.loser_page)
                 val btn = findViewById<Button>(R.id.hp)
                 btn.setOnClickListener {
-                    val Intent1 = Intent(this@EasyMode,MainActivity::class.java)
+                    val Intent1 = Intent(this@MediumMode,MainActivity::class.java)
                     startActivity(Intent1)
                 }
+
             }
         }.start()
     }
@@ -149,17 +155,14 @@ class EasyMode : AppCompatActivity() {
 
         //checks if all matches are made
         //opens winner page if completed in time
-        if(counter.equals(4)){
+        if(counter.equals(6)){
             //display pop up message saying they won!
             setContentView(R.layout.winner_page)
             val btn = findViewById<Button>(R.id.hp)
             btn.setOnClickListener {
-                val Intent1 = Intent(this@EasyMode,MainActivity::class.java)
+                val Intent1 = Intent(this@MediumMode,MainActivity::class.java)
                 startActivity(Intent1)
             }
         }
     }
 }
-
-
-
